@@ -3,6 +3,7 @@ import './App.css';
 import {SuperButton} from './components/SuperButton';
 import {SuperInput} from './components/SuperInput';
 import {FourthDopSuperButton} from './components/FourthDopSuperButton';
+import {SuperTodolist} from './components/SuperTodolist';
 
 type TodosType = {
     completed: boolean
@@ -57,7 +58,7 @@ function App() {
         //вынес пустую функцию наверх как заглушку, не обращать внимания
     }
 
-    const task = [
+    const tasks = [
         {id: 1, title: 'HTML', isDone: true},
         {id: 2, title: 'JS', isDone: true},
         {id: 3, title: 'React', isDone: false},
@@ -66,6 +67,40 @@ function App() {
     return (
         <div className="App">
             {/* 4-ый доп с Игорем*/}
+            <br/>
+            <br/>
+            <SuperTodolist tasks={tasks}>
+                <div>
+                    <FourthDopSuperButton callback={emptyCallback}
+                                          color={'red'}>
+                        RED SUPER BUTTON
+                    </FourthDopSuperButton>
+                    <FourthDopSuperButton callback={emptyCallback}>
+                        DEFAULT SUPER BUTTON
+                    </FourthDopSuperButton>
+                    <FourthDopSuperButton callback={emptyCallback}
+                                          disabled
+                                          color={'secondary'}>
+                        DISABLED SUPER BUTTON
+                    </FourthDopSuperButton>
+                </div>
+            </SuperTodolist>
+
+            <div>-------------------------------------</div>
+            <SuperTodolist tasks={tasks}>
+                <div>some text</div>
+                <div>some text</div>
+                <div>some text</div>
+                <div>some text</div>
+            </SuperTodolist>
+            <div>-------------------------------------</div>
+            <SuperTodolist tasks={tasks}>
+                <div>some text</div>
+                <div>some text</div>
+                <input type="text"/>
+            </SuperTodolist>
+
+
             <br/>
             <br/>
             <FourthDopSuperButton callback={emptyCallback}
