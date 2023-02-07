@@ -4,12 +4,14 @@ type FourthDopSuperButtonType = {
     callback: () => void
     color: string
     children?: React.ReactNode
+    size?: number
 }
 export const FourthDopSuperButton: React.FC<FourthDopSuperButtonType> = (
     {
         callback,
         color,
-        children
+        children,
+        ...otherProps
     }
 ) => {
 
@@ -18,3 +20,24 @@ export const FourthDopSuperButton: React.FC<FourthDopSuperButtonType> = (
         <button>{children}</button>
     );
 };
+
+
+
+//----------------------------------------------------------------------------------------------------------------------
+/*
+export const FourthDopSuperButton: React.FC<FourthDopSuperButtonType> = (
+    {
+        callback,
+        color,
+        children,
+        ...otherProps
+    }
+) => {
+
+
+    return (
+        <button>{children}</button>
+    );
+};
+*/
+
