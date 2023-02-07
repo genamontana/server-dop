@@ -1,0 +1,62 @@
+.button {
+    overflow: hidden;
+    padding: 5px 24px;
+
+    border-radius: 3px;
+    border: none;
+    color: white;
+    font-family: sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    cursor: pointer;
+}
+
+.disabled {
+    color: darkblue;
+    background: #1212da;
+    opacity: 0.5;
+}
+
+.secondary {
+    color: blue;
+    background: transparent;
+    border: 1px solid blue;
+}
+
+.default {
+    background: green;
+
+}
+
+.red {
+    background: red;
+}
+
+.default:hover {
+    background: greenyellow;
+}
+
+.red:hover {
+    background: red;
+}
+
+.secondary:hover {
+    background: white;
+}
+
+.default:active {
+    background: blue;
+}
+
+.secondary:active {
+    background: white;
+}
+
+red:active {
+    background: red;
+}
+
+.button:disabled {
+    cursor: default;
+}

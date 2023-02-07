@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import './App.css';
 import {SuperButton} from './components/SuperButton';
 import {SuperInput} from './components/SuperInput';
+import {FourthDopSuperButton} from './components/FourthDopSuperButton';
 
 type TodosType = {
     completed: boolean
@@ -11,6 +12,7 @@ type TodosType = {
 }
 
 function App() {
+    /*3-й доп с Игорем*/
     const [todos, setTodos] = useState<TodosType[]>([])
     const [newTitle, setNewTitle] = useState('')
     const myFetch = () => {
@@ -50,8 +52,39 @@ function App() {
         )
     })
 
+    /* 4-ый доп с Игорем*/
+    const emptyCallback = () => {
+        //вынес пустую функцию наверх как заглушку, не обращать внимания
+    }
+
+    const task = [
+        {id: 1, title: 'HTML', isDone: true},
+        {id: 2, title: 'JS', isDone: true},
+        {id: 3, title: 'React', isDone: false},
+    ]
+
     return (
         <div className="App">
+            {/* 4-ый доп с Игорем*/}
+            <br/>
+            <br/>
+            <FourthDopSuperButton callback={emptyCallback}
+                                  color={'red'}>
+                RED SUPER BUTTON
+            </FourthDopSuperButton>
+            <FourthDopSuperButton callback={emptyCallback}>
+                DEFAULT SUPER BUTTON
+            </FourthDopSuperButton>
+            <FourthDopSuperButton callback={emptyCallback}
+                                  disabled
+                                  color={'secondary'}>
+                DISABLED SUPER BUTTON
+            </FourthDopSuperButton>
+            <br/>
+            <br/>
+            <hr/>
+
+            {/*3-й доп с Игорем*/}
             <SuperButton name={'SHOW UP'}
                          callBack={showUpHandler}/>
             <SuperButton name={'DELETE'}
